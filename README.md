@@ -16,15 +16,15 @@ Java,  MySQL,  Netbeans IDE, QuickDBD
 ## How to Run?
 >Compile
 
-    'javac -cp <mysql-connector-java-5.1.46-bin path>; <src/propertyapp/PropertyApp.java path>'
+    javac -cp <mysql-connector-java-5.1.46-bin path>; <src/propertyapp/PropertyApp.java path>
 >Run
 
-    'java -cp <mysql-connector-java-5.1.46-bin path>; <src/propertyapp/PropertyApp path>'
+    java -cp <mysql-connector-java-5.1.46-bin path>; <src/propertyapp/PropertyApp path>
     
 **OR**
    >Make jar file and run as follows 
    
-    'java -jar <propertyApp.jar path>'
+    java -jar <propertyApp.jar path>
     
  [Creating a jar file](https://docs.oracle.com/javase/tutorial/deployment/jar/build.html)
  
