@@ -2,7 +2,7 @@
 Application for adding Buildings having some Rooms in database.
 
 ## Language & Tools Used
-Java,  MySQL,  Netbeans IDE
+Java,  MySQL,  Netbeans IDE, QuickDBD
 
 ## Library 
  [mysql-connector-java-5.1.46-bin](https://dev.mysql.com/downloads/connector/j/5.1.html) It  is the official JDBC driver for MySQL.
@@ -15,30 +15,29 @@ Java,  MySQL,  Netbeans IDE
 + Done!
 ## How to Run?
 >Compile
->
-    javac -cp <mysql-connector-java-5.1.46-bin path>; <src/propertyapp/PropertyApp.java path>
+
+    'javac -cp <mysql-connector-java-5.1.46-bin path>; <src/propertyapp/PropertyApp.java path>'
 >Run
->
-    java -cp <mysql-connector-java-5.1.46-bin path>; <src/propertyapp/PropertyApp path>
+
+    'java -cp <mysql-connector-java-5.1.46-bin path>; <src/propertyapp/PropertyApp path>'
     
 **OR**
    >Make jar file and run as follows 
-   >
-    java -jar <propertyApp.jar path>
+   
+    'java -jar <propertyApp.jar path>'
     
  [Creating a jar file](https://docs.oracle.com/javase/tutorial/deployment/jar/build.html)
  
 ## Preview
-![
-](https://lh3.googleusercontent.com/_6wovrQKmbOnMNu6SmWo0BWGqvFrnLy-QEoC5tDR76BABO2NJAWkp6ntpLTo56aqm6nkvofhOUVU "Summary Page")
+![Summary](https://lh3.googleusercontent.com/_6wovrQKmbOnMNu6SmWo0BWGqvFrnLy-QEoC5tDR76BABO2NJAWkp6ntpLTo56aqm6nkvofhOUVU "Summary Page")
 
 
 ----------
-![enter image description here](https://lh3.googleusercontent.com/dkK5z2gWuWCGbECQtt6aWWgHbIaSQIhkGKySwgLoCI8SC2nh0kNtwcs1cJcRBo9_Hrnhggi1ebEx)
+![Building](https://lh3.googleusercontent.com/dkK5z2gWuWCGbECQtt6aWWgHbIaSQIhkGKySwgLoCI8SC2nh0kNtwcs1cJcRBo9_Hrnhggi1ebEx)
 
 
 ----------
-![enter image description here](https://lh3.googleusercontent.com/zSVpbQiWJ5eC1mj7nDpE8rrRu3O5aNIV7iNkXecyc0fSKPGaKX15VLRbebHLy-Uhd3U5h6jlFwI9)
+![Rooms](https://lh3.googleusercontent.com/zSVpbQiWJ5eC1mj7nDpE8rrRu3O5aNIV7iNkXecyc0fSKPGaKX15VLRbebHLy-Uhd3U5h6jlFwI9)
 
 
 
