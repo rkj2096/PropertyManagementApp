@@ -28,23 +28,26 @@ Java,  MySQL,  Netbeans IDE, QuickDBD
  [Creating a jar file](https://docs.oracle.com/javase/tutorial/deployment/jar/build.html)
  
 ## Preview
-Setting
-![enter image description here](https://lh3.googleusercontent.com/Jmqkzo_Qa185W6Uxakt9vWr6Ct2BEAlFeRGtua5jz_xrIJsUIPYNAJfwLPhe8KQQS0KE6xSnNPhB)
+>Setting
 
+![enter image description here](https://lh3.googleusercontent.com/Jmqkzo_Qa185W6Uxakt9vWr6Ct2BEAlFeRGtua5jz_xrIJsUIPYNAJfwLPhe8KQQS0KE6xSnNPhB)
 
 ----------
 
-Summary Page
+>Summary Page
+
 ![Summary](https://lh3.googleusercontent.com/_6wovrQKmbOnMNu6SmWo0BWGqvFrnLy-QEoC5tDR76BABO2NJAWkp6ntpLTo56aqm6nkvofhOUVU "Summary Page")
 
 
 ----------
-Add Building
+>Add Building
+
 ![Building](https://lh3.googleusercontent.com/dkK5z2gWuWCGbECQtt6aWWgHbIaSQIhkGKySwgLoCI8SC2nh0kNtwcs1cJcRBo9_Hrnhggi1ebEx)
 
 
 ----------
-Add Room
+>Add Room
+
 ![Room](https://lh3.googleusercontent.com/zSVpbQiWJ5eC1mj7nDpE8rrRu3O5aNIV7iNkXecyc0fSKPGaKX15VLRbebHLy-Uhd3U5h6jlFwI9)
 
 
