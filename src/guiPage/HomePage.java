@@ -65,14 +65,40 @@ public class HomePage extends javax.swing.JFrame {
         this.setIconImage(createImage("/images/building.png").getImage());
         
         //establishing connection witn database
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = (com.mysql.jdbc.Connection)java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/property_app?" + "user=property_user&password=password");
-        } 
-        catch (ClassNotFoundException | SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(null, "Database connection can not be established.\n"+ex, "Database Connection Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        getDatabaseConfigValues();
+        while(true)
+        {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                conn = (com.mysql.jdbc.Connection)java.sql.DriverManager.getConnection("jdbc:mysql://" + HOST + ":3306/" + DATABASE + "?user=" + USERNAME + "&password="+ PASSWORD);
+                break;
+            } 
+            catch (ClassNotFoundException | SQLException ex) {
+                //javax.swing.JOptionPane.showMessageDialog(null, "Database connection can not be established.\n"+ex, "Database Connection Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+
+                javax.swing.JTextField hostField = new javax.swing.JTextField(HOST);
+                javax.swing.JTextField databaseField = new javax.swing.JTextField(DATABASE);
+                javax.swing.JTextField userField = new javax.swing.JTextField(USERNAME);
+                javax.swing.JTextField passwordField = new javax.swing.JPasswordField();
+                Object[] message = {
+                            "Host" , hostField,
+                            "Databse", databaseField,
+                            "Username", userField,
+                            "Password", passwordField
+                };
+                int option = javax.swing.JOptionPane.showConfirmDialog(null, message, "Check/Updata your Database config value", javax.swing.JOptionPane.OK_CANCEL_OPTION);
+                
+                if(option == javax.swing.JOptionPane.CANCEL_OPTION) 
+                     System.exit(0);
+                
+                HOST = hostField.getText();
+                DATABASE = databaseField.getText();
+                USERNAME = userField.getText();
+                PASSWORD = passwordField.getText();
+                
+                setDataBaseConfigValues();
+            }
         }
-        
         //set Summary page
         setSummary();
     }
@@ -611,7 +637,59 @@ public class HomePage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   
+    
+    private void setDataBaseConfigValues()
+    {
+        java.util.Properties props = new java.util.Properties();
+        java.io.FileOutputStream outputFile = null;
+        try
+        {
+            outputFile = new java.io.FileOutputStream(new java.io.File("src\\config\\config.properties"));
+            
+            //set values
+            props.setProperty("HOST", HOST);
+            props.setProperty("DATABASE", DATABASE);
+            props.setProperty("USERNAME", USERNAME);
+            props.setProperty("PASSWORD", PASSWORD);
+            
+            props.store(outputFile, "XYZ");
+        }
+        catch(java.io.IOException ex){
+            javax.swing.JOptionPane.showMessageDialog(addRoomPanel, "config file is not found."+ ex, "IOError", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+        finally {
+           if(outputFile != null){
+               try{
+                   outputFile.close();
+               }
+               catch(java.io.IOException exe){
+               }
+           }
+        }
+    }
+    private void getDatabaseConfigValues()
+    {
+        java.util.Properties props = new java.util.Properties();
+        java.io.FileInputStream inputFile;
+        try
+        {   
+            System.out.println(new java.io.File(".").getAbsolutePath());
+            inputFile = new java.io.FileInputStream(new java.io.File("src\\config\\config.properties"));
+            props.load(inputFile);
+            
+            //set config values
+            HOST = props.getProperty("HOST");
+            DATABASE = props.getProperty("DATABASE");
+            USERNAME = props.getProperty("USERNAME");
+            PASSWORD = props.getProperty("PASSWORD");
+            
+        }
+        catch(java.io.IOException ex)
+        {
+            javax.swing.JOptionPane.showMessageDialog(addRoomPanel, new java.io.File(".").getAbsolutePath() + ex, "IOError", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     //set summary page
     private void setSummary()
     {
@@ -909,6 +987,11 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_preJButtonActionPerformed
 
     //user defined variable
+    private String PASSWORD;
+    private String USERNAME;
+    private String DATABASE;
+    private String HOST;
+    //database configuration values
     private com.mysql.jdbc.Connection conn;
     private Building building;
     private java.util.ArrayList<Room> rooms;
